@@ -1,5 +1,6 @@
 package graphe;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,14 +13,27 @@ public class GrapheListe implements Graphe {
         this.ensNoeuds = new ArrayList<Noeud>();
     }
 
+    public void GrapheListe(String Fichier) throws IOException {
+        FileReader r = new FileReader(Fichier);
+        BufferedReader br = new BufferedReader(r);
+
+        String ligne = br.readLine();
+        while (ligne != null){
+            String[] tabS = ligne.split("\t");
+
+        }
+
+
+    }
+
     @Override
     public List<String> listeNoeuds() {
-        // TODO: 07/06/2022
+        return null;
     }
 
     @Override
     public List<Arc> suivants(String n) {
-        // TODO: 07/06/2022
+        return null;
     }
 
     @Override
@@ -71,5 +85,6 @@ public class GrapheListe implements Graphe {
         nDepart.ajouterArc(destination, cout);
 
     }
+
 
 }
