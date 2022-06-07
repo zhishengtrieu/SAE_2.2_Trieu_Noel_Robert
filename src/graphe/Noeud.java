@@ -1,6 +1,7 @@
 package graphe;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Noeud {
@@ -11,12 +12,17 @@ public class Noeud {
     /**
      * Liste des arcs partants du noeud.
      */
-    private ArrayList<Arc> adj;
+    private List<Arc> adj;
 
 
     public Noeud(String nom) {
         this.nom = nom;
         this.adj = null;
+    }
+
+    public void ajouterArc(String destination, double cout){
+        Arc a = new Arc(destination,cout);
+        adj.add(a);
     }
 
     @Override
@@ -40,7 +46,7 @@ public class Noeud {
         this.nom = nom;
     }
 
-    public ArrayList<Arc> getAdj() {
+    public List<Arc> getAdj() {
         return adj;
     }
 
