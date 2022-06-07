@@ -54,7 +54,7 @@ public class GrapheListe implements Graphe {
         for (Noeud ensNoeud : ensNoeuds) {
             res += ensNoeud.getNom() + " -> ";
             for (Arc arc : ensNoeud.getAdj()) {
-                res += arc.getDest() + "(" + arc.getCout() + ")";
+                res += arc.getDest() + "(" + arc.getCout() + ") ";
             }
             res += "\n";
         }
@@ -82,6 +82,7 @@ public class GrapheListe implements Graphe {
                 existeDepart = true;
             }else if (nDestination.equals(n)){
                 nDestination = n;
+                existeDestination = true;
             }
         }
         //si les noeuds n'existent pas, on les ajoute
