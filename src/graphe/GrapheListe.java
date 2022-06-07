@@ -16,7 +16,6 @@ public class GrapheListe implements Graphe {
         // TODO: 07/06/2022
     }
 
-
     @Override
     public String toString() {
         String res = "";
@@ -41,22 +40,30 @@ public class GrapheListe implements Graphe {
         Noeud nDepart = new Noeud(depart);
         Noeud nDestination = new Noeud(destination);
 
-        //on verifie si le noeud de depart existe deja
+        //on verifie si les noeuds de depart et de destination existent deja
         boolean existeDepart = false;
-        int i = 0;
-        while ((!existeDepart) && (i < ensNoeuds.size())){
-            Noeud n= ensNoeuds.get(i);
+        boolean existeDestination = false;
+        for (Noeud n : ensNoeuds){
             if (nDepart.equals(n)){
                 nDepart = n;
                 existeDepart = true;
+            }else if (nDestination.equals(n)){
+                nDestination = n;
             }
-            i++;
         }
+        //si les noeuds n'existent pas, on les ajoute
+        if (!existeDepart){
+            ensNoeuds.add(nDepart);
+            ensNom.add(depart);
+        }
+        if (!existeDestination){
+            ensNoeuds.add(nDestination);
+            ensNom.add(destination);
+        }
+
+        //a la fin on ajoute l'arc
         nDepart.ajouterArc(destination, cout);
 
     }
-
-
-
 
 }
