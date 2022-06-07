@@ -37,7 +37,7 @@ public class GrapheListe implements Graphe {
         Noeud nDepart = new Noeud(depart);
         Noeud nDestination = new Noeud(destination);
 
-        //on verifie si le noeud de depart existe deja
+        //on verifie si les noeuds de depart et de destination existent deja
         boolean existeDepart = false;
         boolean existeDestination = false;
         for (Noeud n : ensNoeuds){
