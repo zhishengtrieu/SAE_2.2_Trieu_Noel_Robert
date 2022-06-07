@@ -1,10 +1,16 @@
 package graphe;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GrapheListe implements Graphe {
     private List<String> ensNom;
     private List<Noeud> ensNoeuds;
+
+    public GrapheListe() {
+        this.ensNom = new ArrayList<String>();
+        this.ensNoeuds = new ArrayList<Noeud>();
+    }
 
     @Override
     public List<String> listeNoeuds() {
