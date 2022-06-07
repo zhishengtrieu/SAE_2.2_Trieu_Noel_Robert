@@ -39,15 +39,26 @@ public class GrapheListe implements Graphe {
 
         //on verifie si le noeud de depart existe deja
         boolean existeDepart = false;
-        int i = 0;
-        while ((!existeDepart) && (i < ensNoeuds.size())){
-            Noeud n= ensNoeuds.get(i);
+        boolean existeDestination = false;
+        for (Noeud n : ensNoeuds){
             if (nDepart.equals(n)){
                 nDepart = n;
                 existeDepart = true;
+            }else if (nDestination.equals(n)){
+                nDestination = n;
             }
-            i++;
         }
+        //si les noeuds n'existent pas, on les ajoute
+        if (!existeDepart){
+            ensNoeuds.add(nDepart);
+            ensNom.add(depart);
+        }
+        if (!existeDestination){
+            ensNoeuds.add(nDestination);
+            ensNom.add(destination);
+        }
+
+        //a la fin on ajoute l'arc
         nDepart.ajouterArc(destination, cout);
 
     }
