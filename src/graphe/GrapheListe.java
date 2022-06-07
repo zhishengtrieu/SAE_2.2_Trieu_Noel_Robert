@@ -13,14 +13,20 @@ public class GrapheListe implements Graphe {
         this.ensNoeuds = new ArrayList<Noeud>();
     }
 
-    public void GrapheListe(String Fichier) throws IOException {
+
+
+    public GrapheListe(String Fichier) throws IOException {
+        this.ensNom = new ArrayList<String>();
+        this.ensNoeuds = new ArrayList<Noeud>();
+
         FileReader r = new FileReader(Fichier);
         BufferedReader br = new BufferedReader(r);
 
         String ligne = br.readLine();
         while (ligne != null){
             String[] tabS = ligne.split("\t");
-
+            ajouterArc(tabS[0], tabS[1], Double.parseDouble(tabS[2]));
+            ligne = br.readLine();
         }
 
 
