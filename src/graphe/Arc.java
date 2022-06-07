@@ -8,7 +8,7 @@ public class Arc {
         this.dest = dest;
         //si le cout est négatif, on le met à 0
         //si il est positif, on l'affecte au cout
-        this.cout = cout>0?cout:0;
+        this.cout = cout > 0 ? cout : 0;
     }
 
     public double getCout() {
@@ -25,5 +25,10 @@ public class Arc {
 
     public void setDest(String dest) {
         this.dest = dest;
+    }
+
+    @Override
+    public String toString() {
+        return "" + getDest() + "(" + getCout() + ")";
     }
 }

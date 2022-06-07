@@ -20,8 +20,11 @@ public class GrapheListe implements Graphe {
     @Override
     public String toString() {
         String res = "";
-        for(int i=0;i< ensNom.size();i++){
-            res +=
+        for(int i=0;i< ensNoeuds.size();i++){
+            res += ensNoeuds.get(i).getNom() + "->" ;
+            for(int a=0; a< ensNoeuds.get(i).getAdj().size();a++){
+                res += ensNoeuds.get(i).getAdj().get(a).toString() +"\n";
+            }
         }
 
         return res;
