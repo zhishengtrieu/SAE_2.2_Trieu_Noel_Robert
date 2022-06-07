@@ -14,12 +14,18 @@ public class GrapheListe implements Graphe {
 
     @Override
     public List<String> listeNoeuds() {
-        // TODO: 07/06/2022
+        return this.ensNom;
     }
 
     @Override
     public List<Arc> suivants(String n) {
-        // TODO: 07/06/2022
+        List<Arc> arcs = new ArrayList<Arc>();
+        for (Noeud noeud : this.ensNoeuds) {
+            if (noeud.equals(new Noeud(n))) {
+                arcs= noeud.getAdj();
+            }
+        }
+        return arcs;
     }
 
     @Override
