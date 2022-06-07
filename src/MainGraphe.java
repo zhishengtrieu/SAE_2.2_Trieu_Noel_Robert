@@ -14,5 +14,7 @@ public class MainGraphe {
         g.ajouterArc("D", "B", 23);
         g.ajouterArc("D", "C", 10);
         g.ajouterArc("E", "D", 43);
+        System.out.println(g);
+        System.out.println(g.toGraphViz());
     }
 }
