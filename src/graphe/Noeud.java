@@ -17,7 +17,7 @@ public class Noeud {
 
     public Noeud(String nom) {
         this.nom = nom;
-        this.adj = null;
+        this.adj = new ArrayList<Arc>();
     }
 
     public void ajouterArc(String destination, double cout){

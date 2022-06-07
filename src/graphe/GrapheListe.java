@@ -14,22 +14,29 @@ public class GrapheListe implements Graphe {
 
     @Override
     public List<String> listeNoeuds() {
-        return null;
+        return this.ensNom;
     }
 
     @Override
     public List<Arc> suivants(String n) {
-        return null;
+        List<Arc> arcs = new ArrayList<Arc>();
+        for (Noeud noeud : this.ensNoeuds) {
+            if (noeud.equals(new Noeud(n))) {
+                arcs= noeud.getAdj();
+            }
+        }
+        return arcs;
     }
 
     @Override
     public String toString() {
         String res = "";
-        for(int i=0;i< ensNoeuds.size();i++){
-            res += ensNoeuds.get(i).getNom() + "->" ;
-            for(int a=0; a< ensNoeuds.get(i).getAdj().size();a++){
-                res += ensNoeuds.get(i).getAdj().get(a).toString() +"\n";
+        for (Noeud ensNoeud : ensNoeuds) {
+            res += ensNoeud.getNom() + " -> ";
+            for (Arc arc : ensNoeud.getAdj()) {
+                res += arc.getDest() + "(" + arc.getCout() + ")";
             }
+            res += "\n";
         }
 
         return res;
