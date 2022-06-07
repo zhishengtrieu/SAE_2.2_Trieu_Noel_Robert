@@ -20,5 +20,6 @@ public class MainGraphe {
         System.out.println(g.toGraphViz());
 
         GrapheListe g2 = new GrapheListe("Graphes/Graphe1.txt");
+        System.out.println(g2);
     }
 }

@@ -52,11 +52,13 @@ public class GrapheListe implements Graphe {
     public String toString() {
         String res = "";
         for (Noeud ensNoeud : ensNoeuds) {
-            res += ensNoeud.getNom() + " -> ";
-            for (Arc arc : ensNoeud.getAdj()) {
-                res += arc.getDest() + "(" + arc.getCout() + ") ";
+            if (ensNoeud.getAdj().size()!=0) {
+                res += ensNoeud.getNom() + " -> ";
+                for (Arc arc : ensNoeud.getAdj()) {
+                    res += arc.getDest() + "(" + arc.getCout() + ") ";
+                }
+                res += "\n";
             }
-            res += "\n";
         }
 
         return res;
