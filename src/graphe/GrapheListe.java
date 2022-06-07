@@ -101,7 +101,7 @@ public class GrapheListe implements Graphe {
                 res += ensNoeud.getNom() + " -> " + arc.getDest() + "[label = "+ arc.getCout() +"]\n";
             }
         }
-        return res;
+        return res+="}";
     }
 
 }
