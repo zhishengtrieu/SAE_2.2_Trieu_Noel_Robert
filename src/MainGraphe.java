@@ -1,3 +1,5 @@
+import graphe.GrapheListe;
+
 /**
  * Main qui crée le graphe représenté dans la figure 1
  */
