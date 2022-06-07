@@ -52,4 +52,9 @@ public class GrapheListe implements Graphe {
 
     }
 
+    public String toGraphViz() {
+        String res = "";
+
+    }
+
 }
