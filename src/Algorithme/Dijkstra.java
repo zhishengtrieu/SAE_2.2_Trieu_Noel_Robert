@@ -14,14 +14,10 @@ public class Dijkstra implements Algorithme{
      * @return
      */
     public Valeur resoudre(Graphe g, String depart){
-        Valeur res = new Valeur();
-        ArrayList<String> Q = new ArrayList<>();
-        for (String v : g.listeNoeuds()){
-            res.setValeur(v, Double.MAX_VALUE);
-            res.setParent(v, null);
-            Q.add(v);
-        }
-        res.setValeur(depart, 0);
+
+        Valeur res = Algorithme.initialiser(g, depart);
+        ArrayList<String> Q = new ArrayList<String>(g.listeNoeuds());
+
 
         while(Q.size() > 0){
             String u = Q.get(0);
