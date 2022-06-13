@@ -78,6 +78,11 @@ public class Valeur {
      * @return res Le chemin pour acceder au point destination
      */
     public List<String> calculerChemin(String destination){
+
+            if (!parent.containsKey(destination)) {
+                return null;
+            }
+
         List<String> res = new ArrayList<>();
         boolean nonVide = false;
         while(!nonVide){
