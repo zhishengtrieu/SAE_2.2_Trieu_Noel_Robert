@@ -1,3 +1,4 @@
+import Algorithme.*;
 import graphe.GrapheListe;
 
 import java.io.IOException;
@@ -16,10 +17,13 @@ public class MainGraphe {
         g.ajouterArc("D", "B", 23);
         g.ajouterArc("D", "C", 10);
         g.ajouterArc("E", "D", 43);
-        System.out.println(g);
-        System.out.println(g.toGraphViz());
+
 
         GrapheListe g2 = new GrapheListe("Graphes/Graphe1.txt");
-        System.out.println(g2);
+        BellmanFord bellmanFord = new BellmanFord();
+        System.out.println((bellmanFord.resoudre(g2,"B")));
+
+        Dijkstra dijkstra = new Dijkstra();
+        System.out.println(dijkstra.resoudre(g2,"1"));
     }
 }

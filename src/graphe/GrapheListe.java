@@ -112,12 +112,7 @@ public class GrapheListe implements Graphe{
         return res+="}";
     }
 
-    public void plusCourtChemint(Algorithme methode, Graphe g, String depart ){
-        if(methode=="BellamanFord"){
-            Algorithme bellmanFord = new BellmanFord();
-            bellmanFord.resoudre(g, depart);
-            }
-        }
+
 
 
 }
