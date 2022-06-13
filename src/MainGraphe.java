@@ -48,27 +48,28 @@ public class MainGraphe {
 
         System.out.println(tt);*/
 
-        long date_debut2 = System.nanoTime () ;
+        long date_debut2 = System.nanoTime();
         Valeur val2 = dijkstra.resoudre(g2, "1");
-        long date_fin2 = System.nanoTime () ;
+        long date_fin2 = System.nanoTime();
         long duree2 = date_fin2 - date_debut2;
 
-        long date_debut = System . nanoTime () ;
+        long date_debut = System.nanoTime();
         Valeur val = bf.resoudre(g2, "1");
-        long date_fin = System . nanoTime () ;
+        long date_fin = System.nanoTime();
         long duree = date_fin - date_debut;
 
-        System.out.println(val.calculerChemin("502")+"\n");
+        System.out.println(val.calculerChemin("502") + "\n");
         System.out.println("Temps d'execution avec BellmanFord: " + duree + " ns");
         System.out.println("Temps d'execution avec Dijkstra: " + duree2 + " ns");
         System.out.println("-------------------------------------------------------");
-        if(duree-duree2>0){
-            System.out.println("Dijkstra est plus rapide de : " + (duree-duree2)+" ns");
-        }else {
-            System.out.println("BellmanFord est plus rapide de : " + Math.abs(duree-duree2)+" ns");
+        if (duree - duree2 > 0) {
+            System.out.println("Dijkstra est plus rapide de : " + (duree - duree2) + " ns");
+        } else {
+            System.out.println("BellmanFord est plus rapide de : " + Math.abs(duree - duree2) + " ns");
         }
 
-}}
+    }
+}
 
 
 
