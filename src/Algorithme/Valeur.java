@@ -71,6 +71,30 @@ public class Valeur {
     }
 
     /**
+     * Cette m´ethode retourne une liste de nœuds correspondant au
+     * chemin menant au nœud pass´e en param`etre `a partir du point de d´epart donn´e
+     * lors de la construction de l’objet Valeur.
+     * @param destination Le point auquel on veut connaitre le chemin pour y acceder
+     * @return res Le chemin pour acceder au point destination
+     */
+    public List<String> calculerChemin(String destination){
+        List<String> res = new ArrayList<>();
+        boolean nonVide = false;
+        while(!nonVide){
+            res.add(getParent(destination));
+            destination = getParent(destination);
+            if(destination==null){
+                nonVide=true;
+            }
+        }
+
+        return res;
+    }
+
+
+
+
+    /**
      * retourne une chaine qui affiche le contenu
      * - par noeud stocke
      * - a chaque noeud, affiche la valeur puis le noeud parent

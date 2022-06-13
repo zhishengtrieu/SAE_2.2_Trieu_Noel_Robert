@@ -25,7 +25,7 @@ public class BellmanFord implements Algorithme{
         /* Algorithm */
         /* Chaques étape va être de la taille de tous les noeuds */
         for(int i =0; i<g.listeNoeuds().size(); i++) {
-            
+
 
         }
 

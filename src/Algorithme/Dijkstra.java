@@ -15,7 +15,7 @@ public class Dijkstra implements Algorithme{
      */
     public Valeur resoudre(Graphe g, String depart){
         Valeur res = new Valeur();
-        ArrayList<String> Q = new ArrayList<String>();
+        ArrayList<String> Q = new ArrayList<>();
         for (String v : g.listeNoeuds()){
             res.setValeur(v, Double.MAX_VALUE);
             res.setParent(v, null);
