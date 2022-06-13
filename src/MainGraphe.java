@@ -14,12 +14,14 @@ public class MainGraphe {
 
         GrapheListe g2 = new GrapheListe("Graphes/Graphe901.txt");
         System.out.println(g2);
-
+/*
         BellmanFord bf = new BellmanFord();
         Timer t = new Timer();
         t.schedule();
         Valeur val = bf.resoudre(g2, "A");
         System.out.println(val.calculerChemin("B"));
+
+ */
 
     }
 }

@@ -18,7 +18,6 @@ public class BellmanFord implements Algorithme {
         boolean changement = true;
         // on vérifie si la ligne a changé ou non (pour savoir si on a atteint le point fixe)
         while (changement) {
-            System.out.println(res);
             changement = false;
             // On parcours chaque noeud du graphe
             for (int i = 0; i < Q.size(); i++) {
