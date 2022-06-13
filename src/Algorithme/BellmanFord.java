@@ -15,7 +15,13 @@ public class BellmanFord implements Algorithme{
 
         /* Algorithm */
         /* Chaques étape va être de la taille de tous les noeuds */
-
+        for(int i =1; i<Q.size(); i++) {
+            for (Arc a : g.suivants(Q.get(i))){
+                if (res.getValeur(Q.get(i)) + a.getCout() < res.getValeur(a.getDest())){
+                    res.setValeur(a.getDest(), res.getValeur(Q.get(i)) + a.getCout());
+                    res.setParent(a.getDest(), Q.get(i));
+                }
+            }
 
         }
 
