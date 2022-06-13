@@ -2,7 +2,7 @@ package graphe;
 
 import java.util.List;
 
-public interface Graphe {
+public interface Graphe{
 
     /**
      * Retourne tous les noeuds du graphe avec leur nom

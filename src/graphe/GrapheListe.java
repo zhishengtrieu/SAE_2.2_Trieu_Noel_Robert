@@ -3,8 +3,8 @@ package graphe;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
-public class GrapheListe implements Graphe {
+import Algorithme.*;
+public class GrapheListe implements Graphe{
     private List<String> ensNom;
     private List<Noeud> ensNoeuds;
 
@@ -111,5 +111,13 @@ public class GrapheListe implements Graphe {
         }
         return res+="}";
     }
+
+    public void plusCourtChemint(Algorithme methode, Graphe g, String depart ){
+        if(methode=="BellamanFord"){
+            Algorithme bellmanFord = new BellmanFord();
+            bellmanFord.resoudre(g, depart);
+            }
+        }
+
 
 }
