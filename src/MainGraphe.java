@@ -3,6 +3,7 @@ import Algorithme.Dijkstra;
 import Algorithme.Valeur;
 import graphe.GrapheListe;
 
+import java.awt.*;
 import java.io.IOException;
 import java.time.temporal.Temporal;
 import java.util.Timer;
@@ -14,10 +15,11 @@ public class MainGraphe {
 
     public static void main(String[] args) throws IOException {
 
-        GrapheListe g2 = new GrapheListe("Graphes/Graphe902.txt");
+
         BellmanFord bf = new BellmanFord();
         Dijkstra dijkstra = new Dijkstra();
 
+        GrapheListe g2 = new GrapheListe("Graphes/Graphe1.txt");
 
 
        /* long tt =0;
@@ -67,3 +69,6 @@ public class MainGraphe {
         }
 
 }}
+
+
+

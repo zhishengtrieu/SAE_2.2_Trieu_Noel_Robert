@@ -13,8 +13,7 @@ public class MainPointFixe {
         GrapheListe g2 = new GrapheListe("Graphes/Graphe1.txt");
         BellmanFord bellmanFord = new BellmanFord();
         System.out.println(bellmanFord.resoudre(g2,"1"));
-        System.out.println(bellmanFord.resoudre(g2,"2").calculerChemin("10"));
-
+        System.out.println(bellmanFord.resoudre(g2,"1").calculerChemin("10"));
 
     }
 }
