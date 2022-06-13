@@ -15,17 +15,25 @@ public class BellmanFord implements Algorithme {
         ArrayList<String> Q = new ArrayList<String>(g.listeNoeuds());
 
         /* Algorithme */
-        /* Chaque étape va être de la taille de tous les noeuds */
-        for (int i = 1; i < Q.size(); i++) {
-            for (Arc a : g.suivants(Q.get(i))) {
-                if (res.getValeur(Q.get(i)) + a.getCout() < res.getValeur(a.getDest())) {
-                    res.setValeur(a.getDest(), res.getValeur(Q.get(i)) + a.getCout());
-                    res.setParent(a.getDest(), Q.get(i));
+        boolean changement = true;
+        // on vérifie si la ligne a changé ou non (pour savoir si on a atteint le point fixe)
+        while (changement) {
+            changement = false;
+            // On parcours chaque noeud du graphe
+            for (int i = 0; i < Q.size(); i++) {
+                // On parcours chaque arc (noeuds suivants) d'un noeud
+                for (Arc a : g.suivants(Q.get(i))) {
+                    // Si on a trouvé une valeur plus petite qu'avant, on modifie la valeur du chemin
+                    double nouvelleVal = res.getValeur(Q.get(i)) + a.getCout();
+                    if (nouvelleVal < res.getValeur(a.getDest())) {
+                        changement = true;
+                        res.setValeur(a.getDest(), nouvelleVal);
+                        res.setParent(a.getDest(), Q.get(i));
+                    }
                 }
             }
-
         }
-
         return res;
     }
+
 }
