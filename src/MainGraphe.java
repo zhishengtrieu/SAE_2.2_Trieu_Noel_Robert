@@ -1,4 +1,5 @@
-import Algorithme.*;
+import Algorithme.BellmanFord;
+import Algorithme.Valeur;
 import graphe.GrapheListe;
 
 import java.io.IOException;
@@ -17,13 +18,15 @@ public class MainGraphe {
         g.ajouterArc("D", "B", 23);
         g.ajouterArc("D", "C", 10);
         g.ajouterArc("E", "D", 43);
-
+        System.out.println(g);
+        System.out.println(g.toGraphViz());
 
         GrapheListe g2 = new GrapheListe("Graphes/Graphe1.txt");
-        BellmanFord bellmanFord = new BellmanFord();
-        System.out.println((bellmanFord.resoudre(g2,"B")));
+        System.out.println(g2);
 
-        Dijkstra dijkstra = new Dijkstra();
-        System.out.println(dijkstra.resoudre(g2,"1"));
+        BellmanFord bf = new BellmanFord();
+        Valeur val = bf.resoudre(g, "A");
+        System.out.println(val.calculerChemin("B"));
+
     }
 }
