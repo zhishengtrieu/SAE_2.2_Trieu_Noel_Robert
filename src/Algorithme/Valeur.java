@@ -81,7 +81,8 @@ public class Valeur {
         List<String> res = new ArrayList<>();
         boolean nonVide = false;
         while(!nonVide){
-            res.add(destination);
+
+            res.add(0, destination);
             destination = getParent(destination);
             if(destination==null){
                 nonVide=true;
