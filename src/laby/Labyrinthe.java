@@ -191,8 +191,8 @@ public class Labyrinthe {
 
     public GrapheListe genererGraphe() {
         GrapheListe g = new GrapheListe();
-        for (int i = 0; i < getLength(); i++) {
-            for (int j = 0; j < getLengthY(); j++) {
+        for (int i = 1; i < getLength(); i++) {
+            for (int j = 1; j < getLengthY(); j++) {
                 for (int[] voisin : voisinsValides(i, j)) {
                     g.ajouterArc("(" + i + "," + j + ")", "(" + voisin[0] + "," + voisin[1] + ")", 1);
                 }
