@@ -193,10 +193,12 @@ public class Labyrinthe {
         GrapheListe g = new GrapheListe();
         //on parcours le labyrinthe en evitant la premiere ligne et la derniere ligne
         //ainsi que la premiere colonne et la derniere colonne pour eviter les murs
-        for (int i = 1; i < getLength()-1; i++) {
-            for (int j = 1; j < getLengthY()-1; j++) {
-                for (int[] voisin : voisinsValides(i, j)) {
-                    g.ajouterArc("(" + i + "," + j + ")", "(" + voisin[0] + "," + voisin[1] + ")", 1);
+        for (int i = 1; i < getLength() - 1; i++) {
+            for (int j = 1; j < getLengthY() - 1; j++) {
+                if (!this.murs[i][j]) {
+                    for (int[] voisin : voisinsValides(i, j)) {
+                        g.ajouterArc("(" + i + "," + j + ")", "(" + voisin[0] + "," + voisin[1] + ")", 1);
+                    }
                 }
             }
         }
