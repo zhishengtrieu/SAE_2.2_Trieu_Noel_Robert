@@ -17,7 +17,7 @@ public class TestAlgorithme {
     Tests de la méthode de Djikstra
      */
     @Test
-    public void testBonTri() throws IOException {
+    public void testBonTri() {
         GrapheListe g = new GrapheListe();
         g.ajouterArc("A", "B", 12);
         g.ajouterArc("A", "C", 12);
@@ -74,7 +74,6 @@ public class TestAlgorithme {
 
         assertEquals(listIdeal,list,"Mauvais chemin");
     }
-
 
     /*
     Tests de la méthode du point fixe
