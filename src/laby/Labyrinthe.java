@@ -221,11 +221,9 @@ public class Labyrinthe {
         res.add(getSuivant(x, y, BAS));
 
         for (int[] pos : res) {
-            //si la position est hors du labyrinthe ou que c'est un mur on la supprime de la liste
-            if (pos[0] < 0 || pos[1] < 0 || pos[0] >= getLength() || pos[1] >= getLengthY()) {
-                res.add(pos);
-            } else if (this.murs[pos[0]][pos[1]]) {
-                res.add(pos);
+            //si la position est un mur on la supprime de la liste
+            if (this.murs[pos[0]][pos[1]]) {
+                res.remove(pos);
             }
         }
 
