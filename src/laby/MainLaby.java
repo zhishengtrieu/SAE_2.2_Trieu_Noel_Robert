@@ -16,6 +16,6 @@ public class MainLaby {
         BellmanFord bellmanFord = new BellmanFord();
         Valeur valeur = bellmanFord.resoudre(g, "(1,1)");
 
-        System.out.println(valeur);
+        System.out.println(valeur.calculerChemin("(8,5)"));
     }
 }
