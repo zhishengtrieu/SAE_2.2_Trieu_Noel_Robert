@@ -46,6 +46,36 @@ public class TestAlgorithme {
         assertEquals(null,list);
     }
 
+    /**
+     * Test de la méthode de Djikstra avec le graphe "boucle" (cf. figure 10 du sujet)
+     */
+    @Test
+    public void testCheminMinimum_Djikstra_boucle() {
+        GrapheListe g = new GrapheListe();
+        g.ajouterArc("A", "B", 20);
+        g.ajouterArc("A", "D", 3);
+        g.ajouterArc("D", "C", 4);
+        g.ajouterArc("C", "B", 2);
+        g.ajouterArc("B", "G", 10);
+        g.ajouterArc("G", "F", 5);
+        g.ajouterArc("F", "E", 3);
+
+        Dijkstra dijkstra = new Dijkstra();
+        Valeur valeur = dijkstra.resoudre(g,"A");
+        List<String> list = valeur.calculerChemin("E");
+        List<String> listIdeal = new ArrayList<>();
+        listIdeal.add("A");
+        listIdeal.add("D");
+        listIdeal.add("C");
+        listIdeal.add("B");
+        listIdeal.add("G");
+        listIdeal.add("F");
+        listIdeal.add("E");
+
+        assertEquals(listIdeal,list,"Mauvais chemin");
+    }
+
+
     /*
     Tests de la méthode du point fixe
      */
@@ -96,6 +126,35 @@ public class TestAlgorithme {
         listAttendu.add("C");
 
         assertEquals(listAttendu, list, "Mauvais chemin");
+    }
+
+    /**
+     * Test de la méthode du point fixe avec le graphe "boucle" (cf. figure 10 du sujet)
+     */
+    @Test
+    public void testCheminMinimum_pointFixe_boucle() {
+        GrapheListe g = new GrapheListe();
+        g.ajouterArc("A", "B", 20);
+        g.ajouterArc("A", "D", 3);
+        g.ajouterArc("D", "C", 4);
+        g.ajouterArc("C", "B", 2);
+        g.ajouterArc("B", "G", 10);
+        g.ajouterArc("G", "F", 5);
+        g.ajouterArc("F", "E", 3);
+
+        BellmanFord bellmanFord = new BellmanFord();
+        Valeur valeur = bellmanFord.resoudre(g,"A");
+        List<String> list = valeur.calculerChemin("E");
+        List<String> listIdeal = new ArrayList<>();
+        listIdeal.add("A");
+        listIdeal.add("D");
+        listIdeal.add("C");
+        listIdeal.add("B");
+        listIdeal.add("G");
+        listIdeal.add("F");
+        listIdeal.add("E");
+
+        assertEquals(listIdeal,list,"Mauvais chemin");
     }
 
     /**
